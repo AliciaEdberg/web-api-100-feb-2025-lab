@@ -2,7 +2,7 @@ using FluentValidation;
 using Marten;
 using MicroElements.Swashbuckle.FluentValidation.AspNetCore;
 using SoftwareCatalog.Api.Catalog;
-using SoftwareCatalog.Api.Vendors;
+using SoftwareCatalog.Api.Vendors.V2;
 
 var builder = WebApplication.CreateBuilder(args);
 

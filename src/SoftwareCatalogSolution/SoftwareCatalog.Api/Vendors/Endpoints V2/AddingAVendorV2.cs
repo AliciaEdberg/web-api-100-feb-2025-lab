@@ -6,7 +6,6 @@ using Microsoft.AspNetCore.Mvc;
 namespace SoftwareCatalog.Api.Vendors.V2.Endpoints;
 public static class AddingAVendorV2
 {
-
     public static async Task<Results<Created<VendorDetailsResponseModel>, BadRequest>> CanAddVendorAsync(
         [FromBody] VendorCreateModel request,
         [FromServices] IValidator<VendorCreateModel> validator,
@@ -15,8 +14,6 @@ public static class AddingAVendorV2
         [FromServices] IHttpContextAccessor _httpContextAccessor
         )
     {
-
-        //var user = _httpContextAccessor.HttpContext.User; // Don't Do This!!@
         var sub = _httpContextAccessor.HttpContext.User.Identity.Name;
 
         var validations = await validator.ValidateAsync(request);
@@ -34,7 +31,7 @@ public static class AddingAVendorV2
         };
         session.Store(entity);
         await session.SaveChangesAsync();
-        var response = entity.MapToModel();
+        var response = entity.MapToModel(); // Use the new mapping method
         return TypedResults.Created($"/v2/vendors/{entity.Slug}", response);
     }
 }

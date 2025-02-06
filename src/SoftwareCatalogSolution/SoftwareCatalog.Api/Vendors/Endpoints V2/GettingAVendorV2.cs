@@ -2,7 +2,7 @@
 using Marten;
 using Microsoft.AspNetCore.Http.HttpResults;
 
-namespace SoftwareCatalog.Api.Vendors.Endpoints;
+namespace SoftwareCatalog.Api.Vendors.V2.Endpoints;
 
 public static class GettingAVendorV2
 {

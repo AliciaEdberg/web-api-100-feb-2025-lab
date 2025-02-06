@@ -1,8 +1,8 @@
 ﻿using FluentValidation;
 using SoftwareCatalog.Api.Shared.Catalog;
-using SoftwareCatalog.Api.Vendors.Endpoints;
+using SoftwareCatalog.Api.Vendors.V2.Endpoints;
 
-namespace SoftwareCatalog.Api.Vendors;
+namespace SoftwareCatalog.Api.Vendors.V2;
 
 public static class Extensions
 {
@@ -28,9 +28,9 @@ public static class Extensions
     {
         var group = routes.MapGroup("vendors").WithTags("Approved Vendors").WithDescription("The Approved Vendors for the Company");
 
-        group.MapPost("/", AddingAVendor.CanAddVendorAsync).RequireAuthorization("canAddVendors");
-        group.MapGet("/{id}", GettingAVendor.GetVendorAsync).WithTags("Approved Vendors", "Catalog");
-        group.MapGet("/", GettingAVendor.GetVendorsAsync);
+        group.MapPost("/", AddingAVendorV2.CanAddVendorAsync).RequireAuthorization("canAddVendors");
+        group.MapGet("/{id}", GettingAVendorV2.GetVendorAsync).WithTags("Approved Vendors", "Catalog");
+        group.MapGet("/", GettingAVendorV2.GetVendorsAsync);
         return group;
 
     }
