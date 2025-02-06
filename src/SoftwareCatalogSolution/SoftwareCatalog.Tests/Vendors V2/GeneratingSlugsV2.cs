@@ -8,7 +8,7 @@ namespace SoftwareCatalog.Tests.Vendors.V2;
 [Trait("Category", "Unit")]
 [Trait("Feature", "Vendors")]
 [Trait("Bug", "938938")]
-public class GeneratingSlugs
+public class GeneratingSlugsV2
 {
     [Theory]
     [InlineData("Microsoft", "microsoft")]
