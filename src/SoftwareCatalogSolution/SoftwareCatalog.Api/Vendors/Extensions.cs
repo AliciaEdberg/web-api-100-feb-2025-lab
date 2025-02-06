@@ -32,6 +32,7 @@ public static class Extensions
         group.MapGet("/{id}", GettingAVendor.GetVendorAsync).WithTags("Approved Vendors", "Catalog");
         group.MapGet("/", GettingAVendor.GetVendorsAsync);
         return group;
-       
+
     }
+
 }
