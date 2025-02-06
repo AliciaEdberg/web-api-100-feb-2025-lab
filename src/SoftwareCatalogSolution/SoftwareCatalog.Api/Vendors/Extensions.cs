@@ -34,5 +34,15 @@ public static class Extensions
         return group;
 
     }
+    public static IEndpointRouteBuilder MapVendorsV2(this IEndpointRouteBuilder routes)
+    {
+        var group = routes.MapGroup("v2/vendors").WithTags("Approved Vendors V2").WithDescription("The Approved Vendors for the Company V2");
+
+        group.MapPost("/", AddingAVendorV2.CanAddVendorAsync).RequireAuthorization("canAddVendors");
+        group.MapGet("/{id}", GettingAVendorV2.GetVendorAsync).WithTags("Approved Vendors", "Catalog");
+        group.MapGet("/", GettingAVendorV2.GetVendorsAsync);
+        return group;
+
+    }
 
 }

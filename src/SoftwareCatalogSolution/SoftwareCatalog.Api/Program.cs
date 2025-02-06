@@ -47,9 +47,10 @@ app.UseAuthentication();
 app.UseAuthorization();
 // Make Some Change
 app.MapControllers(); // this will scan your entire project for any controllers, use the attributes (HttpGet, etc.) to create
-// a "route table" - like a phone book. Reflection (the ability to have code look at itself)
+                      // a "route table" - like a phone book. Reflection (the ability to have code look at itself)
 
-  app.MapVendors();
+app.MapVendors();
+app.MapVendorsV2();
 app.Run(); // a blocking infinite for loop.
 
 // I will explain this later if you:
